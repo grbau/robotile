@@ -1,0 +1,19 @@
+//
+// BASIC STYLES
+//
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+// no margin on last children
+p,
+ul,
+ol,
+li,
+figure {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
