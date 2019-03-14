@@ -1,0 +1,54 @@
+//
+// FONTS IMPORTS
+//
+
+// OPEN-SANS
+// ----------------------------------------------------------------------------
+
+// open-sans-300 - latin
+//@font-face {
+//  font-family: 'Open Sans';
+//  font-style: normal;
+//  font-weight: 300;
+//  src:
+//    local('Open Sans Light'),
+//    local('OpenSans-Light'),
+//    url('#{$font-path}open-sans/open-sans-v13-latin-300.woff2') format('woff2'),
+//    url('#{$font-path}open-sans/open-sans-v13-latin-300.woff') format('woff');
+//}
+
+// app-icon / FONTELLO
+// To edit selection, in public/fonts/fontello folder,
+// just drag and drop config.json on fontello's website, then replace the project folder
+// ----------------------------------------------------------------------------
+
+// Only import codes (and paste common css below), otherwise links breaks
+// variable interpolation don't work for imports
+//@import '../fonts/fontello/css/app-icon-codes.css';
+//
+//@font-face {
+//  font-family: 'app-icon';
+//  font-weight: normal;
+//  font-style: normal;
+//  src:
+//    url('#{$font-path}fontello/font/app-icon.woff2?11568713') format('woff2'),
+//    url('#{$font-path}fontello/font/app-icon.woff?11568713') format('woff');
+//}
+//
+//[class^='app-icon-']:before,
+//[class*=' app-icon-']:before {
+//  font-family: 'app-icon';
+//  font-style: normal;
+//  font-weight: normal;
+//  speak: none;
+//  display: inline-block;
+//  text-decoration: inherit;
+//  width: 1em;
+//  text-align: center;
+//  font-variant: normal;
+//  text-transform: none;
+//  line-height: 1em;
+//  -webkit-font-smoothing: antialiased;
+//  -moz-osx-font-smoothing: grayscale;
+//  font-size: 1.65em;
+//}

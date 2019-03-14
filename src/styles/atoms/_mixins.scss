@@ -1,0 +1,77 @@
+// Status colors getter
+@function getStatusColor($color) {
+  @return nth(map_get($statusColors, $color), 1);
+}
+
+@mixin underlined-link-base {
+  position: relative;
+  text-decoration: none;
+  transition: none $underlineAnimationDuration $underlineAnimationEasing;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: $underlineThickness;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: inherit;
+    transition-duration: (.5 - $underlineAnimationGapPercent / 100%) * $underlineAnimationDuration;
+  }
+
+  &::before {
+    background: $underlineHoverColor;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition-delay: (.5 + $underlineAnimationGapPercent / 100%) * $underlineAnimationDuration;
+  }
+
+  &::after {
+    background: $underlineRestingColor;
+    transform-origin: 100% 0;
+  }
+}
+
+@mixin underlined-link-hover {
+  text-decoration: none;
+  color: $grey-dark;
+
+  &::before {
+    transform: scaleX(1);
+    transition-property: transform;
+  }
+
+  &::after {
+    transform: scaleX(0);
+    transition-property: transform;
+  }
+}
+
+/// Arrow helper mixin
+
+@mixin arrow ($direction, $color: currentcolor, $width: .2rem) {
+  @if $direction == left {
+    transform: rotate(135deg);
+  }
+
+  @else if $direction == right {
+    transform: rotate(-45deg);
+  }
+
+  @else if $direction == top {
+    transform: rotate(-135deg);
+  }
+
+  @else if $direction == down {
+    transform: rotate(45deg);
+  }
+
+  padding: $width;
+  border: solid $color;
+  border-width: 0 $width $width 0;
+  outline: none;
+  background: none;
+  font-size: 0;
+}
