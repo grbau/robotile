@@ -16,7 +16,12 @@ export class HomeComponent implements OnInit {
     {img: 'http://placehold.it/350x150/666666'}
   ];
 
-  slideConfig = {slidesToShow: 2, slidesToScroll: 2};
+  slideConfig = {
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    nextArrow: '<i class="app-icon-right-open slick-arrow--next"></i>',
+    prevArrow: '<i class="app-icon-left-open slick-arrow--next"></i>'
+  };
 
   ngOnInit() {
   }

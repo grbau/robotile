@@ -3,16 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { HomeModule } from './home/home.module';
 import { SlickModule } from 'ngx-slick';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeModule,
     SlickModule.forRoot(),
     AngularSvgIconModule,
-    HttpClientModule
+    HttpClientModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

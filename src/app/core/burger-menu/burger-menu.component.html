@@ -1,0 +1,156 @@
+<nav class="custom-scrollbar" (click)="$event.currentTarget === $event.target ? clickLink($event) : ''">
+  <ul class="lvl1">
+    <li>
+      <a href="#"
+         [routerLink]="['/home']"
+         routerLinkActive="active"
+         (click)="clickLink($event)">
+        <i class="app-icon-home"></i>
+        <span>Accueil</span>
+      </a>
+    </li>
+    <!--<li>-->
+    <!--<a #trigger id="consultationMenu" href="#" class="trigger-subnav"-->
+    <!--(click)="toggleSubmenu($event)">-->
+    <!--<i class="app-icon-search"></i>-->
+    <!--<span>Consultation</span>-->
+    <!--</a>-->
+    <!--<ul class="lvl2">-->
+    <!--<li>-->
+    <!--<a id="customerSearchLink" href="#"-->
+    <!--[routerLink]="['/customer']"-->
+    <!--routerLinkActive="active"-->
+    <!--(click)="clickLink($event)">Client</a>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<a id="constructionSiteLink" href="#"-->
+    <!--[routerLink]="['/construction-site']"-->
+    <!--routerLinkActive="active"-->
+    <!--(click)="clickLink($event)">Chantier</a>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<a href="#" id="documentSearchLink"-->
+    <!--[routerLink]="['/document/search']"-->
+    <!--routerLinkActive="active"-->
+    <!--(click)="clickLink($event)">Document</a>-->
+    <!--</li>-->
+    <!--<li class="hidden-feature">-->
+    <!--<a href="#"-->
+    <!--[routerLink]="['/article']"-->
+    <!--routerLinkActive="active"-->
+    <!--(click)="clickLink($event)">Article</a>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<a #trigger id="operationMenu" href="#" class="trigger-subnav"-->
+    <!--(click)="toggleSubmenu($event)">-->
+    <!--<i class="app-icon-basket"></i>-->
+    <!--<span>Opérations de vente</span>-->
+    <!--</a>-->
+    <!--<ul class="lvl2">-->
+    <!--<li>-->
+    <!--<a href="#"-->
+    <!--[routerLink]="['/document']"-->
+    <!--routerLinkActive="active"-->
+    <!--(click)="clickLink($event)">Création d'un document</a>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</li>-->
+    <!--<li class="hidden-feature">-->
+    <!--<a href="#">-->
+    <!--<i class="app-icon-users"></i>-->
+    <!--<span>Client</span>-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<a #trigger id="salePointMenu" href="#" class="trigger-subnav"-->
+    <!--(click)="toggleSubmenu($event)">-->
+    <!--<i class="app-icon-building-filled"></i>-->
+    <!--<span>Mon point de vente</span>-->
+    <!--</a>-->
+    <!--<ul class="lvl2">-->
+    <!--<li>-->
+    <!--<a #trigger id="checkout" href="#" class="trigger-subnav"-->
+    <!--(click)="toggleSubmenu($event, 'triggerSubmenu')">Caisse</a>-->
+    <!--<div class="lvl3-wrapper">-->
+    <!--<ul class="lvl3">-->
+    <!--<li>-->
+    <!--<a href="#"-->
+    <!--[routerLink]="['checkout/manage']"-->
+    <!--routerLinkActive="active"-->
+    <!--(click)="clickLink($event)">Gestion des caisses-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--<li class="hidden-feature">-->
+    <!--<a href="#"-->
+    <!--[routerLink]="['checkout/user-access']"-->
+    <!--routerLinkActive="active"-->
+    <!--(click)="clickLink($event)">Gestion des accès-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--<li class="hidden-feature">-->
+    <!--<a href="#"-->
+    <!--[routerLink]="['checkout/historic']"-->
+    <!--routerLinkActive="active"-->
+    <!--(click)="clickLink($event)">Historiques des inventaires de caisse-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<a id="stockZoneMenu" #trigger href="#" class="trigger-subnav"-->
+    <!--(click)="toggleSubmenu($event)">-->
+    <!--<i class="app-icon-box"></i>-->
+    <!--<span>Stocks / Zonage</span>-->
+    <!--</a>-->
+    <!--<ul class="lvl2">-->
+    <!--<li>-->
+    <!--<a id="article-not-zoned" href="#"-->
+    <!--[routerLink]="['/zone/article-not-zoned']"-->
+    <!--routerLinkActive="active"-->
+    <!--(click)="clickLink($event)">Articles non zonés</a>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<a id="warehousesLink" href="#"-->
+    <!--[routerLink]="['/warehouse/search']"-->
+    <!--routerLinkActive="active"-->
+    <!--(click)="clickLink($event)">Entrepôts</a>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<a id="zonesLink" href="#"-->
+    <!--[routerLink]="['/zone/search']"-->
+    <!--routerLinkActive="active"-->
+    <!--(click)="clickLink($event)">Zones & emplacements</a>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</li>-->
+    <!--<li class="hidden-feature">-->
+    <!--<a href="#">-->
+    <!--<i class="app-icon-truck"></i>-->
+    <!--<span>Approvisionnements</span>-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--<li class="hidden-feature">-->
+    <!--<a href="#">-->
+    <!--<i class="app-icon-user"></i>-->
+    <!--<span>Mon compte</span>-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--<li class="hidden-feature">-->
+    <!--<a href="#">-->
+    <!--<i class="app-icon-help-circled"></i>-->
+    <!--<span>Aide</span>-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--<li class="hidden-feature">-->
+    <!--<a href="#">-->
+    <!--<i class="app-icon-cog"></i>-->
+    <!--<span>Admin</span>-->
+    <!--</a>-->
+    <!--</li>-->
+  </ul>
+</nav>
