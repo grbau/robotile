@@ -1,0 +1,44 @@
+.icon-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5rem calc(3rem - 2.5%) 0;
+
+  > * {
+    flex: 0 1 21rem;
+    margin: 0 2.5% 4.5rem;
+  }
+
+  @media screen and (max-width: 25em) {
+    margin: 3rem 2rem 0;
+
+    > * {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+.icon-block {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &__picto {
+    display: flex;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+  }
+
+  &__text {
+    margin-top: auto;
+  }
+}

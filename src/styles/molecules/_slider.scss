@@ -75,6 +75,8 @@
 .slick-slide img
 {
   display: block;
+  height: 100%;
+  object-fit: cover;
 }
 .slick-slide.slick-loading img
 {
@@ -105,13 +107,114 @@
 }
 
 .slick-arrow {
+  cursor: pointer;
+  color: $orange;
+  font-size: 1.3rem;
   position: absolute;
+  z-index: 1;
   top: 50%;
-  left:0;
-  transform: translate3d(-50%, -50%, 0);
+  left: 1rem;
+  transform: translate3d(0, -50%, 0);
 
   &--next {
-    right: 0;
+    right: 1rem;
     left: auto;
   }
 }
+
+.slick-dots {
+  width: 100%;
+  position: absolute;
+  bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+
+  > * {
+    margin: 0 .8rem;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  button {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: .5rem;
+    border: none;
+    border-radius: 100%;
+    background: transparent;
+    font-size: 0;
+    transition: none .25s ease;
+
+    &::before {
+      content: '';
+      top: 0;
+      left: 0;
+      margin: 0;
+      border: .2rem solid $white;
+      background: transparent;
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 10;
+      border-radius: inherit;
+      box-sizing: border-box;
+      font-size: .3rem;
+    }
+  }
+
+  .slick-active {
+    button {
+      background-color: transparent;
+
+      &::before {
+        background: $orange;
+      }
+    }
+  }
+}
+
+.slider-home {
+  height: 25rem;
+
+  &__item {
+    position: relative;
+    height: 100%;
+  }
+
+  &__image {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  &__wrapper {
+    position: absolute;
+    padding: 1.5rem;
+    height: 6rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 30%;
+    left: 4%;
+    width: 20rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    flex-basis: 100%;
+    color: $white;
+    font-weight: 600;
+  }
+
+  .rbt-btn {
+    margin-top: auto;
+  }
+}
+

@@ -10,17 +10,24 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   slides = [
-    {img: 'http://placehold.it/350x150/000000'},
-    {img: 'http://placehold.it/350x150/111111'},
-    {img: 'http://placehold.it/350x150/333333'},
-    {img: 'http://placehold.it/350x150/666666'}
+    {img: 'assets/images/slider/home-slider-1.jpg', title: 'titre slide 1'},
+    {img: 'assets/images/slider/home-slider-2.jpg', title: 'titre slide 2'},
+    {img: 'assets/images/slider/home-slider-3.jpg', title: 'titre slide 3'},
+  ];
+
+  concepts = [
+    {img: 'assets/images/icons/icon-analyse.png', title: 'Analyse du besoin'},
+    {img: 'assets/images/icons/icon-configuration.png', title: 'Configuration'},
+    {img: 'assets/images/icons/icon-formation.png', title: 'Formation'},
+    {img: 'assets/images/icons/icon-sav.png', title: 'Sav'},
   ];
 
   slideConfig = {
-    slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
     nextArrow: '<i class="app-icon-right-open slick-arrow--next"></i>',
-    prevArrow: '<i class="app-icon-left-open slick-arrow--next"></i>'
+    prevArrow: '<i class="app-icon-left-open slick-arrow--prev"></i>'
   };
 
   ngOnInit() {

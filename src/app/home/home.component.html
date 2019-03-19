@@ -1,5 +1,27 @@
-<ngx-slick class="carousel" [config]="slideConfig">
-  <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-    <img src="{{ slide.img }}" alt="" width="100%">
+<ngx-slick [config]="slideConfig">
+  <div ngxSlickItem *ngFor="let slide of slides" class="slider-home">
+    <div class="slider-home__item">
+      <figure class="slider-home__image">
+        <img src="{{ slide.img }}" alt="" width="100%">
+      </figure>
+      <div class="slider-home__wrapper">
+        <span class="slider-home__title">{{slide.title}}</span>
+        <a href="#" class="rbt-btn rbt-btn--round rbt-btn--gold">
+          En savoir plus
+        </a>
+      </div>
+    </div>
   </div>
 </ngx-slick>
+
+<div class="subslider-home">
+    <h2 class="h2 subslider-home__title">Machines d'assistance pour la pose de carrelage</h2>
+    <div class="icon-blocks">
+      <div class="icon-block" *ngFor="let concept of concepts">
+        <div class="icon-block__picto">
+          <img src="{{ concept.img }}" alt="">
+        </div>
+        <div class="icon-block__title">{{ concept.title}}</div>
+      </div>
+    </div>
+</div>
