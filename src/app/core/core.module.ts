@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { BurgerMenuComponent } from './burger-menu/burger-menu.component';
 
 /**
  * Core Feature Module
@@ -15,11 +14,9 @@ import { BurgerMenuComponent } from './burger-menu/burger-menu.component';
   ],
   declarations: [
     HeaderComponent,
-    BurgerMenuComponent,
   ],
   exports: [
     HeaderComponent,
-    BurgerMenuComponent,
   ],
   providers: []
 })

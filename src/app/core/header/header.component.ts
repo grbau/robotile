@@ -1,27 +1,29 @@
-import {Component, ElementRef, EventEmitter, Output} from '@angular/core';
-
-export interface HeaderButtonClick {
-  panelObject: string;
-  target?: ElementRef;
-}
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
 
-  @Output() OpenPanel: EventEmitter<HeaderButtonClick> = new EventEmitter();
+export class HeaderComponent {
 
   constructor() {}
 
-  openPanel(panel: string, event) {
-    console.log(panel);
-    this.OpenPanel.emit({
-      panelObject: panel,
-      target: new ElementRef(event.currentTarget)
-    });
+  toggleMenu() {
+    const OPEN_HEADER_NAV_CLASS = 'page-header__nav--open'
+    const OPEN_BTN_BURGER_MENU_CLASS = 'page-header__burger--open'
+    const btnBurgerMenu = document.querySelector('.page-header__burger')
+    const headerNav = document.querySelector('.page-header__nav')
+    if (headerNav.classList.contains(OPEN_HEADER_NAV_CLASS)) {
+      document.body.style.overflow = ''
+      btnBurgerMenu.classList.remove(OPEN_BTN_BURGER_MENU_CLASS)
+      headerNav.classList.remove(OPEN_HEADER_NAV_CLASS);
+    } else {
+      document.body.style.overflow = 'hidden'
+      btnBurgerMenu.classList.add(OPEN_BTN_BURGER_MENU_CLASS)
+      headerNav.classList.add(OPEN_HEADER_NAV_CLASS);
+    }
   }
 
 }

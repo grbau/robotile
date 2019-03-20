@@ -36,7 +36,7 @@
 
 @mixin underlined-link-hover {
   text-decoration: none;
-  color: $grey-dark;
+  color: $blue;
 
   &::before {
     transform: scaleX(1);

@@ -19,7 +19,7 @@
     <div class="icon-blocks">
       <div class="icon-block" *ngFor="let concept of concepts">
         <div class="icon-block__picto">
-          <img src="{{ concept.img }}" alt="">
+          <i class="app-icon-{{concept.icon}}"></i>
         </div>
         <div class="icon-block__title">{{ concept.title}}</div>
       </div>

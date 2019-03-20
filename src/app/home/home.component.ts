@@ -10,16 +10,16 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   slides = [
-    {img: 'assets/images/slider/home-slider-1.jpg', title: 'titre slide 1'},
+    {img: 'assets/images/slider/robo-home.jpg', title: 'titre slide 1'},
     {img: 'assets/images/slider/home-slider-2.jpg', title: 'titre slide 2'},
     {img: 'assets/images/slider/home-slider-3.jpg', title: 'titre slide 3'},
   ];
 
   concepts = [
-    {img: 'assets/images/icons/icon-analyse.png', title: 'Analyse du besoin'},
-    {img: 'assets/images/icons/icon-configuration.png', title: 'Configuration'},
-    {img: 'assets/images/icons/icon-formation.png', title: 'Formation'},
-    {img: 'assets/images/icons/icon-sav.png', title: 'Sav'},
+    {icon: 'compass', title: 'Analyse du besoin'},
+    {icon: 'pencil', title: 'Configuration'},
+    {icon: 'attach', title: 'Formation'},
+    {icon: 'link', title: 'Sav'},
   ];
 
   slideConfig = {
