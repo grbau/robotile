@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   slides = [
-    {img: 'assets/images/slider/robo-home.jpg', title: 'titre slide 1'},
+    {img: 'assets/images/slider/home-slider-1.jpg', title: 'titre slide 1'},
     {img: 'assets/images/slider/home-slider-2.jpg', title: 'titre slide 2'},
     {img: 'assets/images/slider/home-slider-3.jpg', title: 'titre slide 3'},
   ];
@@ -25,9 +25,18 @@ export class HomeComponent implements OnInit {
   slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: true,
+    dots: false,
     nextArrow: '<i class="app-icon-right-open slick-arrow--next"></i>',
-    prevArrow: '<i class="app-icon-left-open slick-arrow--prev"></i>'
+    prevArrow: '<i class="app-icon-left-open slick-arrow--prev"></i>',
+    cssEase: 'cubic-bezier(0.87, 0.03, 0.41, 0.9)',
+    fade: true,
+    // responsive: [{
+    //   breakpoint: 480,
+    //   settings: {
+    //     dots: true,
+    //     arrow: false,
+    //   }
+    // }],
   };
 
   ngOnInit() {

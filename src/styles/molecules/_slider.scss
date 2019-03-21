@@ -125,7 +125,7 @@
 .slick-dots {
   width: 100%;
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,7 +150,7 @@
     border-radius: 100%;
     background: transparent;
     font-size: 0;
-    transition: none .25s ease;
+    transition: all .3s ease;
 
     &::before {
       content: '';
@@ -179,11 +179,13 @@
       }
     }
   }
+  @media screen and (max-width: 42.5rem) {
+    bottom: 1.2rem;
+  }
+
 }
 
 .slider-home {
-  height: 40rem;
-
   &__item {
     position: relative;
     height: 100%;
@@ -193,19 +195,27 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    transition: all .8s ease;
+    animation:slideOut .4s cubic-bezier(0.4, 0.29, 0.01, 1);
   }
 
   &__wrapper {
     position: absolute;
-    padding: 1.5rem;
-    min-height: 10rem;
-    min-width: 22rem;
+    padding: 2rem;
     background-color: rgba(0, 0, 0, 0.5);
-    bottom: 30%;
-    left: 4%;
-    width: 20rem;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    transform: translateY(100px);
+    transition: all .3s ease;
+    opacity: 0;
+    z-index: 1;
+
+    @media screen and (max-width: 42.5rem) {
+      padding: 1rem;
+    }
   }
 
   &__title {
@@ -213,10 +223,66 @@
     color: $white;
     font-weight: 600;
     font-size: 2.5rem;
+
+    @media screen and (max-width: 42.5rem) {
+      font-size: 1.5rem;
+    }
   }
 
   .rbt-btn {
     margin-top: auto;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $blue;
+    opacity: .3;
+    z-index: 1;
+  }
+
+}
+
+
+
+.slick-slide {
+  height: 40rem;
+
+  &.slick-active {
+    .slider-home__wrapper {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.7s cubic-bezier(0.32, 0.34, 0, 1.62) 0.6s;
+    }
+
+    .slider-home__image {
+      animation: slideIn 2.4s cubic-bezier(0.4, 0.29, 0.01, 1);
+    }
+  }
+
+  @media screen and (max-width: 42.5rem) {
+    height: 24rem;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    filter:blur(15px);
+  }
+  to {
+    filter:blur(0);
+  }
+}
+@keyframes slideOut {
+  from {
+    filter:blur(0);
+  }
+  to {
+    filter:blur(15px);
   }
 }
 
