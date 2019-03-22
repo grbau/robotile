@@ -11,14 +11,16 @@
   </div>
 </ngx-slick>
 
-<div class="subslider-home">
-    <h2 class="h2 subslider-home__title">Machines d'assistance pour la pose de carrelage</h2>
-    <div class="icon-blocks">
-      <div class="icon-block" *ngFor="let concept of concepts">
-        <div class="icon-block__picto">
-          <i class="app-icon-{{concept.icon}}"></i>
+<div class="rbt-container">
+  <div class="subslider-home">
+      <h2 class="h2 subslider-home__title">Machines d'assistance pour la pose de carrelage</h2>
+      <div class="icon-blocks">
+        <div class="icon-block" *ngFor="let concept of concepts">
+          <div class="icon-block__picto">
+            <i class="app-icon-{{concept.icon}}"></i>
+          </div>
+          <div class="icon-block__title">{{ concept.title}}</div>
         </div>
-        <div class="icon-block__title">{{ concept.title}}</div>
       </div>
-    </div>
+  </div>
 </div>

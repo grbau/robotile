@@ -25,18 +25,12 @@ export class HomeComponent implements OnInit {
   slideConfig = {
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: false,
+    dots: true,
     nextArrow: '<i class="app-icon-right-open slick-arrow--next"></i>',
     prevArrow: '<i class="app-icon-left-open slick-arrow--prev"></i>',
     cssEase: 'cubic-bezier(0.87, 0.03, 0.41, 0.9)',
     fade: true,
-    // responsive: [{
-    //   breakpoint: 480,
-    //   settings: {
-    //     dots: true,
-    //     arrow: false,
-    //   }
-    // }],
+    mobileFirst: true,
   };
 
   ngOnInit() {
