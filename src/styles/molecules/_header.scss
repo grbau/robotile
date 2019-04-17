@@ -23,6 +23,10 @@
     flex-wrap: wrap;
   }
 
+  @media screen and (max-width: 62.5em) {
+    padding: 0;
+  }
+
   &__logo {
     > a {
       color: inherit;
