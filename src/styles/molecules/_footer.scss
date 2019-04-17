@@ -1,0 +1,68 @@
+// Actual style
+.footer {
+  $namespace: &;
+
+  margin: 0;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5rem 0 1rem 0;
+  background: $grey;
+
+  @media screen and (max-width: 47.9375em) {
+    flex-wrap: wrap;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  &__bottom {
+    color: $white;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.social-share {
+  display: flex;
+  align-items: center;
+  &__label {
+    color: $white;
+    margin-right: 2rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    &-item {
+      background: $orange;
+      border-radius: 100%;
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      margin: 0 .5rem;
+    }
+    
+    &-link {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      text-decoration: none;
+
+      i {
+        color: $white;
+      }
+    }
+  }
+}

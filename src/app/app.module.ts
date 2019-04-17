@@ -8,10 +8,13 @@ import { SlickModule } from 'ngx-slick';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
+import { ContactComponent } from './contact/contact.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,6 +24,7 @@ import { CoreModule } from './core/core.module';
     AngularSvgIconModule,
     HttpClientModule,
     CoreModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
