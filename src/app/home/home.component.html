@@ -1,0 +1,43 @@
+<ngx-slick [config]="slideConfig">
+  <div ngxSlickItem *ngFor="let slide of slides" class="slider-home">
+    <div class="slider-home__item">
+      <figure class="slider-home__image" *ngIf="slide.picture">
+        <img src="{{ slide.url }}" alt="" width="100%">
+      </figure>
+      <video *ngIf="slide.video" autoplay loop muted playsinline >
+        <source src="{{slide.url}}" type="video/mp4" />
+        Ici l'alternative à la vidéo : un lien de téléchargement, un message, etc.
+      </video>
+      <div class="slider-home__wrapper">
+        <span class="slider-home__title">{{slide.title}}</span>
+      </div>
+    </div>
+  </div>
+</ngx-slick>
+
+<div class="rbt-container rbt-container--orange">
+  <div class="subslider-home">
+      <h2 class="h2 subslider-home__title">Solution pour la pose de carrelages grands formats</h2>
+
+    <div class="block-infos">
+      <div class="block-info" *ngFor="let concept of concepts">
+        <div class="block-info__wrapper">
+          <h3 class="block-info__title"> {{concept.title}}</h3>
+          <div class="block-info__content">
+            <div class="block-info__content-icon">
+              <i class="app-icon-{{concept.icon}}"></i>
+            </div>
+              <div class="block-info__content-txt">
+                <p>{{concept.content}} </p>
+              </div>
+            </div>
+        </div>
+       </div>
+      </div>
+    </div>
+
+</div>
+
+<div *ngFor="let record of records">
+  {{record.name}}
+</div>
