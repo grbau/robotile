@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
   constructor() {}
 
@@ -25,5 +25,12 @@ export class HeaderComponent {
       headerNav.classList.add(OPEN_HEADER_NAV_CLASS);
     }
   }
-
+  ngOnInit(): void {
+    Array.from(document.querySelectorAll('.page-header__nav .page-header__btn')).forEach(nav => {
+      nav.addEventListener('click', () => {
+        nav.closest('.page-header__nav').classList.remove('page-header__nav--open');
+        document.querySelector('.page-header__burger').classList.remove('page-header__burger--open');
+      });
+    });
+  }
 }

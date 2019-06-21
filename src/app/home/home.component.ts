@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   slides = [
     {url: 'assets/images/slider/robotile-slider-1.jpg', title: 'titre slide 1', picture: true},
-    {url: 'assets/images/slider/pose-carlita.mp4', title: 'titre slide 2', video: true},
+    {url: 'assets/images/slider/robotile-slider-2.jpg', title: 'titre slide 2', picture: true},
   ];
 
   concepts = [

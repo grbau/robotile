@@ -10,11 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
+import { CarlitaComponent } from './carlita/carlita.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactComponent,
+    CarlitaComponent,
   ],
   imports: [
     BrowserModule,

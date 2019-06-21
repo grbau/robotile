@@ -14,6 +14,7 @@ html, body {
 
 body {
   overflow-x: hidden;
+  color: $grey-dark;
 }
 
 // no margin on last children
@@ -25,4 +26,8 @@ figure {
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+video {
+  margin: 1.6rem 0;
 }

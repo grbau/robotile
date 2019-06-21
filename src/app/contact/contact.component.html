@@ -1,8 +1,9 @@
 <section class="rbt-container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
           <div class="box-container">
-            <h1>Contactez nous</h1>
+            <h1 class="h1-like right-line">Contactez nous</h1>
+
             <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
               <div class="form-group">
                 <input type="text" name="name" id="name" [(ngModel)]="model.name" class="form-control" placeholder="Name" required #name="ngModel">

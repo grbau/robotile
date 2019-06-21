@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
+import {CarlitaComponent} from './carlita/carlita.component';
 
 const routes: Routes = [
   {
@@ -9,13 +10,17 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'carlita',
+    component: CarlitaComponent
+  },
+  {
     path: 'contact',
     component: ContactComponent
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, { useHash: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
