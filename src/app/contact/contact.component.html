@@ -4,48 +4,42 @@
           <div class="box-container">
             <h1 class="h1-like right-line">Contactez nous</h1>
 
-            <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <form (ngSubmit)="onSubmit()" #contactForm="ngForm" [hidden]="submitted">
               <div class="form-group">
-                <input type="text" name="name" id="name" [(ngModel)]="model.name" class="form-control" placeholder="Name" required #name="ngModel">
+                <input type="text" name="name" id="name" [(ngModel)]="model.name" class="form-control" placeholder="Nom" required #name="ngModel">
                 <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
                   <div *ngIf="name.errors.required">
-                    Name is required.
+                    Le nom est obligatoire
                   </div>
                 </div>
               </div>
               <div class="form-group">
                 <input type="text" name="email" id="email" [(ngModel)]="model.email" class="form-control" placeholder="E-Mail" required email #email="ngModel">
                 <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
-                  <div *ngIf="email.errors.required">Email is required.</div>
-                  <div *ngIf="email.errors.email">Email must be a valid email address.</div>
+                  <div *ngIf="email.errors.required">L'Email est obligatoire.</div>
+                  <div *ngIf="email.errors.email">L'email n'est pas valide.</div>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" name="phone" id="phone" [(ngModel)]="model.phone" class="form-control" placeholder="Phone">
+                <input type="text" name="phone" id="phone" [(ngModel)]="model.phone" class="form-control" placeholder="Téléphone">
               </div>
               <div class="form-group">
                 <textarea name="message" id="message" [(ngModel)]="model.message" rows="5" class="form-control" placeholder="Message" required #message="ngModel"></textarea>
                 <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error">
-                  <div *ngIf="message.errors.required">Message is required.</div>
+                  <div *ngIf="message.errors.required">Veuillez saisir un message.</div>
                 </div>
               </div>
               <div class="form-group">
-                <button [disabled]="!contactForm.form.valid" class="btn btn-success">Send Message</button>
+                <button [disabled]="!contactForm.form.valid" class="btn btn-success">Envoyer</button>
               </div>
             </form>
+
+            <div [hidden]="!submitted" class="contact-message">
+                <h2 class="success">Votre message a bien été envoyé</h2>
+
+                <button (click)="gotoHome()" class="btn btn-info">Retour à la page d'accueil</button>
+            </div>
           </div>
         </div>
       </div>
-    <div class="service-error" *ngIf="error">
-<!--      <h1>{{error.errorTitle}}</h1>-->
-<!--      <h3>{{error.errorDesc}}</h3>-->
-    </div>
-    <div [hidden]="!submitted" class="contact-message">
-      <div *ngIf="model.id" class="contact-success">
-        <h2 class="success">Success!</h2>
-        <h4>Contact form has been successfully submitted.</h4>
-        <br />
-        <button (click)="gotoHome()" class="btn btn-info">Go to Home</button>
-      </div>
-    </div>
 </section>
