@@ -5,7 +5,7 @@ header('Access-Control-Allow-Headers: Accept,Accept-Language,Content-Language,Co
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "db";
+$dbname = "robotile";
 $conn = new mysqli($servername, $username, $password, $dbname);
 ?>
 

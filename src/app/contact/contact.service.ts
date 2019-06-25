@@ -9,7 +9,7 @@ import { throwError } from 'rxjs';
 })
 export class ContactService {
 
-  ServerUrl = 'http://localhost/dashboard/';
+  ServerUrl = 'http://www.robotile.fr/';
   errorData: {};
 
   httpOptions = {

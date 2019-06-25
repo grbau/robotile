@@ -10,9 +10,27 @@ VALUES ('$data->name', '$data->email', '$data->phone', '$data->message')";
 if($data->name){
     $qry = $conn->query($sql);
 }
-$conn->close();
 
-//        $formdata = json_decode(file_get_contents('php://input'), true);
+
+        $formdata = json_decode(file_get_contents('php://input'), true);
+
+        $name = $formdata['name'];
+        $email = $formdata['email'];
+        $phone = $formdata['phone'];
+        $message = $formdata['message'];
+
+        $contactData = array(
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'message' => $message,
+            'created_at' => date('Y-m-d H:i:s', time())
+        );
+        return $contactData;
+
+//        sendemail($contactData);
+
+//        $response = array('id' => $id);
 //
 //        if( ! empty($formdata)) {
 //
@@ -39,9 +57,9 @@ $conn->close();
 //            $response = array('id' => '');
 //        }
 //
-////        $this->output
-////            ->set_content_type('application/json')
-////            ->set_output(json_encode($response));
+        $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));
 //
 //    function sendemail($contactData)
 //    {
