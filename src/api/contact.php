@@ -11,6 +11,8 @@ if($data->name){
     $qry = $conn->query($sql);
 }
 
+require 'PHPMailerAutoload.php';
+
 
         $formdata = json_decode(file_get_contents('php://input'), true);
 
@@ -27,6 +29,56 @@ if($data->name){
             'created_at' => date('Y-m-d H:i:s', time())
         );
         return $contactData;
+
+        $mail = new PHPMailer;
+
+        //Enable SMTP debugging.
+        $mail->SMTPDebug = 3;
+        //Set PHPMailer to use SMTP.
+        $mail->isSMTP();
+        //Set SMTP host name
+        $mail->Host = "mail.gandi.net";
+        //Set this to true if SMTP host requires authentication to send email
+        $mail->SMTPAuth = true;
+        //Provide username and password
+        $mail->Username = "serge.semete@robotile.fr";
+        $mail->Password = "super_secret_password";
+        //If SMTP requires TLS encryption then set it
+        $mail->SMTPSecure = "tls";
+        //Set TCP port to connect to
+        $mail->Port = 587;
+
+        $mail->From = "serge.semete@robotile.fr";
+        $mail->FromName = "Serge Sémété";
+        $mail->to($contactData['email']);
+
+        $mail->addAddress("name@example.com", "Recepient Name");
+
+        $mail->isHTML(true);
+
+        $message = '<p>Hi, <br />Some one has submitted contact form.</p>';
+        $message .= '<p><strong>Name: </strong>'.$contactData['name'].'</p>';
+        $message .= '<p><strong>Email: </strong>'.$contactData['email'].'</p>';
+        $message .= '<p><strong>Phone: </strong>'.$contactData['phone'].'</p>';
+        $message .= '<p><strong>Name: </strong>'.$contactData['message'].'</p>';
+        $message .= '<br />Thanks';
+
+//        $mail->Subject = "Subject Text";
+//        $mail->Body = "<i>Mail body in HTML</i>";
+//        $mail->AltBody = "This is the plain text version of the email content";
+
+        $mail->Subject('Contact Form');
+        $mail->Body($message);
+
+if(!$mail->send())
+{
+    echo "Mailer Error: " . $mail->ErrorInfo;
+}
+else
+{
+    echo "Message has been sent successfully";
+}
+
 
 //        sendemail($contactData);
 
