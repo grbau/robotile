@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     Array.from(document.querySelectorAll('.page-header__nav .page-header__btn')).forEach(nav => {
       nav.addEventListener('click', () => {
+        document.body.style.overflow = '';
         nav.closest('.page-header__nav').classList.remove('page-header__nav--open');
         document.querySelector('.page-header__burger').classList.remove('page-header__burger--open');
       });
