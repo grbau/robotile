@@ -1,0 +1,18 @@
+Options All
+
+AuthType "Basic"
+AuthName "Protected Access"
+
+AuthUserFile /srv/data/web/vhosts/www.robotile.fr/.htpasswd
+
+<Limit GET>
+require valid-user
+</Limit>
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
