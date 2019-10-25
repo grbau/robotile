@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { CarlitaComponent } from './carlita/carlita.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { GoogleAnalyticsService } from './google-analytics.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,10 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     CoreModule,
     FormsModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [
+      {provide: LocationStrategy, useClass: HashLocationStrategy},
+      GoogleAnalyticsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
